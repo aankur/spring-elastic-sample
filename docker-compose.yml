@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.3
+    network_mode: "host"
+    restart: always
+    environment:
+      - bootstrap.memory_lock=true
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=elasticadmin
+      - ELASTICSEARCH_USERNAME=elastic
+
